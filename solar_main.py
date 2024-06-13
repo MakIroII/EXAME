@@ -100,15 +100,14 @@ def open_file_dialog():
     Считанные объекты сохраняются в глобальный список space_objects
     """
     global space_objects
-    global perform_execution
     global st
     global sp
     global p
     global r
-    perform_execution = False
+    stop_execution()
     for obj in space_objects:
         screen.delete(obj[6])
-        # удаление старых изображений планет
+    delete_orbit()
     space_objects = []
     in_filename = askopenfilename(filetypes=(("Text file", ".txt"),))
     filename = os.path.splitext(os.path.basename(in_filename))[0]
@@ -125,19 +124,12 @@ def open_file_dialog():
         p.append(space_objects)
         st.append(space_objects)
         r = sp.radius(space_objects)
-        f=[]
-        for obj in space_objects:
-            for  body in space_objects:
-                if obj[0]== "Planet" and body[0] == "Star" and obj[8]==body[8]:
-                    f.append(((body[4]-obj[4])**2+(body[5]-obj[5])**2)**0.5)
-        max_distance=max(f)
-        print(max_distance)
-        screen.change_distance(max_distance)
+        screen.change_distance(space_objects)
         p.move(space_objects, 0)
         sp.move(space_objects, 0, r)
         for obj in space_objects:
             screen.create_image(obj)
-    except (FileNotFoundError, UnicodeDecodeError, IndexError,ValueError):
+    except (FileNotFoundError, UnicodeDecodeError, IndexError, ValueError):
         pass
 
 
@@ -197,6 +189,8 @@ def main():
 
     screen.location(Buttons, ["left", "", " ", "", ""], entries, ['left'], scales, ["left"], labels, ["right"])
     screen.location(Buttons, ["left", "left", "left", "left", "left"], entries, [''], scales, [""], labels, [""])
+
+    screen.scale_objects()
 
     try:
         screen.loop()

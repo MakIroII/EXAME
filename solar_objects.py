@@ -3,8 +3,6 @@ import tkinter
 
 from _tkinter import TclError
 
-from tkinter import ttk
-
 
 class SpaceObjects:
 
@@ -165,15 +163,34 @@ class University:
         self.max_distance = 0
         self.window_width = self.root.winfo_screenwidth()
         self.window_height = self.root.winfo_screenheight()
-        self.space = tkinter.Canvas(self.root, width=self.window_width, height=self.window_height - 119, bg="black")
+        self.space = tkinter.Canvas(self.root, width=self.window_width, height=self.window_height -119, bg="black")
         self.frame = tkinter.Frame(self.root)
         self.scale_factor = 0
         self.t = self.space.create_text(0, 0, font=self.header_font, anchor='nw', text='', fill="white")
+        self.dx = self.dy = 0
+        self.indent = 0
 
-    def change_distance(self, max_distance):
-        self.max_distance = max_distance
-        self.scale_factor = min((self.window_height - 119), self.window_width) / (2 * self.max_distance)
+    def change_distance(self, space_objects):
+        max_list = []
+        min_list = []
+        for objs in space_objects:
+            for objp in space_objects:
+                for objsp in space_objects:
+                    if objs[0] == "Star" and objp[0] == "Planet" and objs[8] == objp[8]:
+                        radius_max = (((objs[4] - objp[4]) ** 2 + (objs[5] - objp[5]) ** 2) ** 0.5 + objs[5]) + \
+                                     objp[1]
+                        radius_min =-(((objs[4] - objp[4]) ** 2 + (objs[5] - objp[5]) ** 2) ** 0.5) + objs[5]-objp[1]
+                        if objsp[0] == "Sputnik" and objp[9] == objsp[8]:
+                            radius_max += ((objsp[4] - objp[4]) ** 2 + (objsp[5] - objp[5]) ** 2) ** 0.5 - objp[1] + objsp[1]
+                            radius_min += -(((objsp[4] - objp[4]) ** 2 + (objsp[5] - objp[5]) ** 2) ** 0.5) + objp[1] - objsp[1]
+                        max_list.append(radius_max)
+                        min_list.append(radius_min)
+        print(max(max_list), min(min_list))
+        self.max_distance = max(max_list) - (min(min_list))
+        self.indent = -(min(min_list))
+        self.scale_factor = min(self.window_height-119, self.window_width) / (self.max_distance)
         print(self.window_height, self.window_width, self.scale_factor)
+        self.dx = self.dy = self.scale_cord(self.indent)
 
     def location(self, buttons, place_b, entries, place_e, scales, place_s, labels, place_l):
         self.space.pack(side=tkinter.TOP)
@@ -249,10 +266,12 @@ class University:
         **star** — объект звезды.
         """
 
-        x = self.scale_x(object[4])
-        y = self.scale_y(object[5])
+        x = object[4]
+        y = object[5]
         r = object[1]
-        object[6] = self.space.create_oval(x - r, y - r, x + r, y + r, fill=object[2])
+        object[6] = self.space.create_oval(self.scale_cord(x - r) + self.dx, self.scale_cord(y - r) + self.dy,
+                                           self.scale_cord(x + r) + self.dx,
+                                           self.scale_cord(y + r) + self.dy, fill=object[2])
 
     def create_orbit_image(self, objects):
         orbits = []
@@ -269,8 +288,9 @@ class University:
                                    float(obj[5] + r)]
                     orbits.append(orbit_cords)
         for orbit in orbits:
-            self.space.create_oval(self.scale_x(orbit[0]), self.scale_y(orbit[1]), self.scale_x(orbit[2]),
-                                   self.scale_y(orbit[3]),
+            self.space.create_oval(self.scale_cord(orbit[0]) + self.dx, self.scale_cord(orbit[1]) + self.dy,
+                                   self.scale_cord(orbit[2]) + self.dx,
+                                   self.scale_cord(orbit[3]) + self.dy,
                                    outline="white", tags='circle')
 
     def update_system_name(self, system_name):
@@ -283,9 +303,7 @@ class University:
         **system_name** — название системы тел.
         """
         self.space.delete(self.t)
-        self.t=self.space.create_text(0, 0,font=self.header_font,anchor='nw', text=system_name, fill="white")
-
-
+        self.t = self.space.create_text(0, 0, font=self.header_font, anchor='nw', text=system_name, fill="white")
 
     def update_object_position(self, objects, orbit_perform):
         """Перемещает отображаемый объект на холсте.
@@ -306,13 +324,15 @@ class University:
                 self.space.delete(circle)
 
         for body in objects:
-            x = self.scale_x(body[4])
-            y = self.scale_y(body[5])
+            x = body[4]
+            y = body[5]
             r = body[1]
             if x + r < 0 or x - r > self.window_width or y + r < 0 or y - r > self.window_height:
                 self.space.coords(body[6], self.window_width + r, self.window_height + r,
                                   self.window_width + 2 * r, self.window_height + 2 * r)  # положить за пределы окна
-            self.space.coords(body[6], x - r, y - r, x + r, y + r)
+            self.space.coords(body[6], self.scale_cord(x - r) + self.dx, self.scale_cord(y - r) + self.dy,
+                              self.scale_cord(x + r) + self.dx,
+                              self.scale_cord(y + r) + self.dy)
 
     def loop(self):
         self.root.mainloop()
@@ -326,19 +346,7 @@ class University:
     def tag_lower(self, obj):
         self.space.tag_lower(obj)
 
-    def scale_x(self, x):
-        """Возвращает экранную **x** координату по **x** координате модели.
-        Принимает вещественное число, возвращает целое число.
-        В случае выхода **x** координаты за пределы экрана возвращает
-        координату, лежащую за пределами холста.
-
-        Параметры:
-
-        **x** — x-координата модели.
-        """
-        return int(x * self.scale_factor) + self.window_width / 8
-
-    def scale_y(self, y):
+    def scale_cord(self, cord):
         """Возвращает экранную **y** координату по **y** координате модели.
         Принимает вещественное число, возвращает целое число.
         В случае выхода **y** координаты за пределы экрана возвращает
@@ -350,4 +358,20 @@ class University:
         **y** — y-координата модели.
         """
 
-        return int(y * self.scale_factor) + (self.window_height - 119) / 10
+        return int(cord * self.scale_factor)
+
+    def scale_objects(self, n=1.2):
+        def more(event):
+            event.x = self.scale_cord(event.x)
+            event.y = self.scale_cord(event.y)
+            self.scale_factor *= n
+            self.dx -= self.scale_cord(event.x)-self.scale_cord(self.dx)
+            self.dy -= self.scale_cord(event.y)-self.scale_cord(self.dy)
+
+
+        def small(event):
+            self.scale_factor /= n
+            self.dx = self.dy = self.scale_cord(self.indent)
+
+        self.space.bind("<Button-1>", more)
+        self.space.bind("<Button-3>", small)
