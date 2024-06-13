@@ -1,0 +1,211 @@
+Star 5 red 0 160 80 0 0 1
+Planet 2 orange 3 130 80 0 90 1 1
+Planet 2 orange 3 130 80 0 0 1 1
+Planet 2 orange 3 130 80 0 180 1 1
+Planet 2 orange 3 130 80 0 270 1 1
+Planet 2 orange -3 100 80 0 0 1 2
+Planet 2 orange -3 100 80 0 90 1 2
+Planet 2 orange -3 100 80 0 180 1 2
+Planet 2 orange -3 100 80 0 270 1 2
+Planet 2 orange 3 70 80 0 90 1 1
+Planet 2 orange 3 70 80 0 0 1 3
+Planet 2 orange 3 70 80 0 180 1 1
+Planet 2 orange 3 70 80 0 270 1 1
+Planet 2 orange -3 40 80 0 0 1 2
+Planet 2 orange -3 40 80 0 90 1 2
+Planet 2 orange -3 40 80 0 180 1 2
+Planet 2 orange -3 40 80 0 270 1 2
+Planet 2 orange 3 10 80 0 90 1 1
+Planet 2 orange 3 10 80 0 0 1 1
+Planet 2 orange 3 10 80 0 180 1 1
+Planet 2 orange 3 10 80 0 270 1 4
+Planet 2 orange -3 -30 80 0 0 1 2
+Planet 2 orange -3 -30 80 0 90 1 2
+Planet 2 orange -3 -30 80 0 180 1 2
+Planet 2 orange -3 -30 80 0 270 1 2
+Planet 2 orange 3 -60 80 0 90 1 1
+Planet 2 orange 3 -60 80 0 0 1 1
+Planet 2 orange 3 -60 80 0 180 1 1
+Planet 2 orange 3 -60 80 0 270 1 1
+Planet 2 orange -3 -90 80 0 180 1 2
+Planet 2 orange -3 -90 80 0 270 1 5
+Sputnik 2 blue 3 -70 82 0 90 5
+Sputnik 2 blue 3 -70 82 0 270 5
+Sputnik 2 blue 6 30 82 0 90 4
+Sputnik 2 blue 6 30 82 0 270 4
+Sputnik 2 blue 6 90 82 0 90 3
+Sputnik 2 blue 6 90 82 0 270 3
+
+Star 5 red 0 413 80 0 0 2
+Planet 2 orange 3 383 80 0 125 2 1
+Planet 2 orange 3 383 80 0 5 2 1
+Planet 2 orange 3 383 80 0 245 2 1
+Planet 2 orange -3 353 80 0 5 2 2
+Planet 2 orange -3 353 80 0 125 2 6
+Planet 2 orange -3 353 80 0 245 2 2
+Planet 2 orange 3 323 80 0 125 2 1
+Planet 2 orange 3 323 80 0 5 2 1
+Planet 2 orange 3 323 80 0 245 2 1
+Planet 2 orange -3 293 80 0 5 2 7
+Planet 2 orange -3 293 80 0 125 2 2
+Planet 2 orange -3 293 80 0 245 2 2
+Planet 2 orange 3 263 80 0 125 2 1
+Planet 2 orange 3 263 80 0 5 2 1
+Planet 2 orange 3 263 80 0 245 2 8
+Sputnik 2 black 3 373 82 0 0 6
+Sputnik 2 black 3 313 82 0 0 7
+Sputnik 2 black 6 283 82 0 0 8
+
+Star 5 red 0 665 80 0 0 3
+Planet 2 orange 3 635 80 0 90 3 1
+Planet 2 orange 3 635 80 0 0 3 1
+Planet 2 orange 3 635 80 0 180 3 1
+Planet 2 orange 3 635 80 0 270 3 1
+Planet 2 orange -3 605 80 0 0 3 2
+Planet 2 orange -3 605 80 0 90 3 2
+Planet 2 orange -3 605 80 0 180 3 2
+Planet 2 orange -3 605 80 0 270 3 2
+Planet 2 orange 3 575 80 0 90 3 1
+Planet 2 orange 3 575 80 0 0 3 9
+Planet 2 orange 3 575 80 0 280 3 1
+Planet 2 orange 3 575 80 0 270 3 1
+Planet 2 orange -3 545 80 0 0 3 2
+Planet 2 orange -3 545 80 0 90 3 2
+Planet 2 orange -3 545 80 0 180 3 2
+Planet 2 orange -3 545 80 0 270 3 2
+Planet 2 orange 3 515 80 0 90 3 1
+Planet 2 orange 3 515 80 0 0 3 1
+Planet 2 orange 3 515 80 0 180 3 1
+Planet 2 orange 3 515 80 0 270 3 10
+Planet 2 orange -3 485 80 0 0 3 2
+Planet 2 orange -3 485 80 0 90 3 2
+Planet 2 orange -3 485 80 0 180 3 2
+Planet 2 orange -3 485 80 0 270 3 2
+Planet 2 orange 3 455 80 0 90 3 1
+Planet 2 orange 3 455 80 0 0 3 1
+Planet 2 orange 3 455 80 0 180 3 1
+Planet 2 orange 3 455 80 0 270 3 1
+Planet 2 orange -3 425 80 0 0 3 2
+Planet 2 orange -3 425 80 0 270 3 11
+Sputnik 2 green 3 445 82 0 90 11
+Sputnik 2 green 3 445 82 0 270 11
+Sputnik 2 green 6 535 82 0 90 10
+Sputnik 2 green 6 535 82 0 270 10
+Sputnik 2 green 6 595 82 0 90 9
+Sputnik 2 green 6 595 82 0 270 9
+
+Star 5 red 0 918 80 0 0 4
+Planet 2 orange 3 888 80 0 121 4 1
+Planet 2 orange 3 888 80 0 1 4 1
+Planet 2 orange 3 888 80 0 241 4 1
+Planet 2 orange -3 858 80 0 1 4 2
+Planet 2 orange -3 858 80 0 121 4 12
+Planet 2 orange -3 858 80 0 241 4 2
+Planet 2 orange 3 828 80 0 121 4 1
+Planet 2 orange 3 828 80 0 1 4 1
+Planet 2 orange 3 828 80 0 241 4 1
+Planet 2 orange -3 798 80 0 1 4 13
+Planet 2 orange -3 798 80 0 121 4 2
+Planet 2 orange -3 798 80 0 241 4 2
+Planet 2 orange 3 765 80 0 121 4 1
+Planet 2 orange 3 765 80 0 1 4 1
+Planet 2 orange 3 765 80 0 241 4 14
+Sputnik 2 black 3 878 82 0 0 12
+Sputnik 2 black 3 818 82 0 0 13
+Sputnik 2 black 6 788 82 0 0 14
+
+Star 5 red 0 320 320 0 0 5
+Planet 2 orange 3 290 320 0 90 5 1
+Planet 2 orange 3 290 320 0 0 5 1
+Planet 2 orange 3 290 320 0 180 5 1
+Planet 2 orange 3 290 320 0 270 5 1
+Planet 2 orange -3 260 320 0 0 5 2
+Planet 2 orange -3 260 320 0 90 5 2
+Planet 2 orange -3 260 320 0 180 5 2
+Planet 2 orange -3 260 320 0 270 5 2
+Planet 2 orange 3 230 320 0 90 5 1
+Planet 2 orange 3 230 320 0 0 5 15
+Planet 2 orange 3 230 320 0 180 5 1
+Planet 2 orange 3 230 320 0 270 5 1
+Planet 2 orange -3 200 320 0 0 5 2
+Planet 2 orange -3 200 320 0 90 5 2
+Planet 2 orange -3 200 320 0 180 5 2
+Planet 2 orange -3 200 320 0 270 5 2
+Planet 2 orange 3 170 320 0 90 5 1
+Planet 2 orange 3 170 320 0 0 5 1
+Planet 2 orange 3 170 320 0 180 5 1
+Planet 2 orange 3 170 320 0 270 5 16
+Planet 2 orange -3 140 320 0 0 5 2
+Planet 2 orange -3 140 320 0 90 5 2
+Planet 2 orange -3 140 320 0 330 5 2
+Planet 2 orange -3 140 320 0 270 5 2
+Planet 2 orange 3 110 320 0 90 5 1
+Planet 2 orange 3 110 320 0 0 5 1
+Planet 2 orange 3 110 320 0 180 5 1
+Planet 2 orange 3 110 320 0 270 5 1
+Planet 2 orange -3 80 320 0 0 5 2
+Planet 2 orange -3 80 320 0 270 5 17
+Sputnik 2 black 3 100 342 0 90 17
+Sputnik 2 black 3 100 342 0 270 17
+Sputnik 2 black 6 190 342 0 90 16
+Sputnik 2 black 6 190 342 0 270 16
+Sputnik 2 black 6 250 342 0 90 15
+Sputnik 2 black 6 250 342 0 270 15
+
+Star 5 red 0 573 320 0 0 6
+Planet 2 orange 3 543 320 0 121 6 1
+Planet 2 orange 3 543 320 0 1 6 1
+Planet 2 orange 3 543 320 0 241 6 1
+Planet 2 orange -3 513 320 0 1 6 2
+Planet 2 orange -3 513 320 0 121 6 18
+Planet 2 orange -3 513 320 0 241 6 2
+Planet 2 orange 3 483 320 0 121 6 1
+Planet 2 orange 3 483 320 0 1 6 1
+Planet 2 orange 3 483 320 0 241 6 1
+Planet 2 orange -3 453 320 0 1 6 19
+Planet 2 orange -3 453 320 0 121 6 2
+Planet 2 orange -3 453 320 0 241 6 2
+Planet 2 orange 3 423 320 0 121 6 1
+Planet 2 orange 3 423 320 0 1 6 1
+Planet 2 orange 3 423 320 0 241 6 20
+Sputnik 2 black 3 73 92 0 0 18
+Sputnik 2 black 3 73 104 0 0 19
+Sputnik 2 black 6 73 109 0 0 20
+
+Star 5 red 0 826 320 0 0 7
+Planet 2 orange 3 796 320 0 90 7 1
+Planet 2 orange 3 796 320 0 0 7 1
+Planet 2 orange 3 796 320 0 180 7 1
+Planet 2 orange 3 796 320 0 270 7 1
+Planet 2 orange -3 766 320 0 0 7 2
+Planet 2 orange -3 766 320 0 90 7 2
+Planet 2 orange -3 766 320 0 180 7 2
+Planet 2 orange -3 766 320 0 270 7 2
+Planet 2 orange 3 736 320 0 90 7 1
+Planet 2 orange 3 736 320 0 0 7 21
+Planet 2 orange 3 736 320 0 180 7 1
+Planet 2 orange 3 736 320 0 270 7 1
+Planet 2 orange -3 706 320 0 0 7 2
+Planet 2 orange -3 706 320 0 90 7 2
+Planet 2 orange -3 706 320 0 180 7 2
+Planet 2 orange -3 706 320 0 270 7 2
+Planet 2 orange 3 676 320 0 90 7 1
+Planet 2 orange 3 676 320 0 0 7 1
+Planet 2 orange 3 676 320 0 180 7 1
+Planet 2 orange 3 676 320 0 270 7 22
+Planet 2 orange -3 646 320 0 0 7 2
+Planet 2 orange -3 646 320 0 90 7 2
+Planet 2 orange -3 646 320 0 330 7 2
+Planet 2 orange -3 646 320 0 270 7 2
+Planet 2 orange 3 616 320 0 90 7 1
+Planet 2 orange 3 616 320 0 0 7 1
+Planet 2 orange 3 616 320 0 180 7 1
+Planet 2 orange 3 616 320 0 270 7 1
+Planet 2 orange -3 586 320 0 0 7 2
+Planet 2 orange -3 586 320 0 270 7 23
+Sputnik 2 black 3 606 320 0 90 23
+Sputnik 2 black 3 606 320 0 270 23
+Sputnik 2 black 6 696 320 0 90 22
+Sputnik 2 black 6 696 320 0 270 22
+Sputnik 2 black 6 756 320 0 90 21
+Sputnik 2 black 6 756 320 0 270 21
