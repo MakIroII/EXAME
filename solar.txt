@@ -52,9 +52,9 @@ Planet 2 orange -3 293 80 0 245 2 2
 Planet 2 orange 3 263 80 0 125 2 1
 Planet 2 orange 3 263 80 0 5 2 1
 Planet 2 orange 3 263 80 0 245 2 8
-Sputnik 2 black 3 373 82 0 0 6
-Sputnik 2 black 3 313 82 0 0 7
-Sputnik 2 black 6 283 82 0 0 8
+Sputnik 2 blue 3 373 82 0 0 6
+Sputnik 2 blue 3 313 82 0 0 7
+Sputnik 2 blue 6 283 82 0 0 8
 
 Star 5 red 0 665 80 0 0 3
 Planet 2 orange 3 635 80 0 90 3 1
@@ -110,9 +110,9 @@ Planet 2 orange -3 798 80 0 241 4 2
 Planet 2 orange 3 765 80 0 121 4 1
 Planet 2 orange 3 765 80 0 1 4 1
 Planet 2 orange 3 765 80 0 241 4 14
-Sputnik 2 black 3 878 82 0 0 12
-Sputnik 2 black 3 818 82 0 0 13
-Sputnik 2 black 6 788 82 0 0 14
+Sputnik 2 yellow 3 878 82 0 0 12
+Sputnik 2 yellow 3 818 82 0 0 13
+Sputnik 2 yellow 6 788 82 0 0 14
 
 Star 5 red 0 320 320 0 0 5
 Planet 2 orange 3 290 320 0 90 5 1
@@ -145,12 +145,12 @@ Planet 2 orange 3 110 320 0 180 5 1
 Planet 2 orange 3 110 320 0 270 5 1
 Planet 2 orange -3 80 320 0 0 5 2
 Planet 2 orange -3 80 320 0 270 5 17
-Sputnik 2 black 3 100 342 0 90 17
-Sputnik 2 black 3 100 342 0 270 17
-Sputnik 2 black 6 190 342 0 90 16
-Sputnik 2 black 6 190 342 0 270 16
-Sputnik 2 black 6 250 342 0 90 15
-Sputnik 2 black 6 250 342 0 270 15
+Sputnik 2 purple 3 100 342 0 90 17
+Sputnik 2 purple 3 100 342 0 270 17
+Sputnik 2 purple 6 190 342 0 90 16
+Sputnik 2 purple 6 190 342 0 270 16
+Sputnik 2 purple 6 250 342 0 90 15
+Sputnik 2 purple 6 250 342 0 270 15
 
 Star 5 red 0 573 320 0 0 6
 Planet 2 orange 3 543 320 0 121 6 1
@@ -168,9 +168,9 @@ Planet 2 orange -3 453 320 0 241 6 2
 Planet 2 orange 3 423 320 0 121 6 1
 Planet 2 orange 3 423 320 0 1 6 1
 Planet 2 orange 3 423 320 0 241 6 20
-Sputnik 2 black 3 73 92 0 0 18
-Sputnik 2 black 3 73 104 0 0 19
-Sputnik 2 black 6 73 109 0 0 20
+Sputnik 2 gold 3 73 92 0 0 18
+Sputnik 2 gold 3 73 104 0 0 19
+Sputnik 2 gold 6 73 109 0 0 20
 
 Star 5 red 0 826 320 0 0 7
 Planet 2 orange 3 796 320 0 90 7 1
@@ -203,9 +203,9 @@ Planet 2 orange 3 616 320 0 180 7 1
 Planet 2 orange 3 616 320 0 270 7 1
 Planet 2 orange -3 586 320 0 0 7 2
 Planet 2 orange -3 586 320 0 270 7 23
-Sputnik 2 black 3 606 320 0 90 23
-Sputnik 2 black 3 606 320 0 270 23
-Sputnik 2 black 6 696 320 0 90 22
-Sputnik 2 black 6 696 320 0 270 22
-Sputnik 2 black 6 756 320 0 90 21
-Sputnik 2 black 6 756 320 0 270 21
+Sputnik 2 silver 3 606 320 0 90 23
+Sputnik 2 silver 3 606 320 0 270 23
+Sputnik 2 silver 6 696 320 0 90 22
+Sputnik 2 silver 6 696 320 0 270 22
+Sputnik 2 silver 6 756 320 0 90 21
+Sputnik 2 silver 6 756 320 0 270 21

@@ -150,10 +150,10 @@ def save_file_dialog():
 def static_save_dialog():
     out_filename = asksaveasfilename(filetypes=(("Text file", ".txt"),))
     try:
-        st.write_static_to_file(out_filename, 'w')
-        p.write_static_to_file(out_filename, 'a')
-        sp.write_static_to_file(out_filename, 'a')
-    except NameError:
+        p.write_static_to_file(out_filename, 'w',physical_time)
+        st.write_static_to_file(out_filename, 'a',physical_time)
+        sp.write_static_to_file(out_filename, 'a',physical_time)
+    except (NameError, FileNotFoundError):
         pass
 
 

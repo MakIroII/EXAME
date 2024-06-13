@@ -9,12 +9,11 @@ class SpaceObjects:
     def __init__(self, filename):
 
         self.filename = filename
-        self.parameters = []
+        self.parameter = []
         self.type = ""
         self.Datas = []
 
     def read_parameters(self):
-
         with open(self.filename) as input_file:
             for line in input_file:
 
@@ -24,13 +23,13 @@ class SpaceObjects:
                 if self.type == object_type:
                     data = line.split()
                     try:
-                        self.parameters = [data[0], float(data[1]), data[2], float(data[3]),
-                                           float(data[4]), float(data[5]), float(data[6]), float(data[7]), int(data[8]),
-                                           int(data[9])]
+                        self.parameter = [data[0], float(data[1]), data[2], float(data[3]),
+                                          float(data[4]), float(data[5]), float(data[6]), float(data[7]), int(data[8]),
+                                          int(data[9])]
                     except IndexError:
-                        self.parameters = [data[0], float(data[1]), data[2], float(data[3]),
-                                           float(data[4]), float(data[5]), float(data[6]), float(data[7]), int(data[8])]
-                    self.Datas.append(self.parameters)
+                        self.parameter = [data[0], float(data[1]), data[2], float(data[3]),
+                                          float(data[4]), float(data[5]), float(data[6]), float(data[7]), int(data[8])]
+                    self.Datas.append(self.parameter)
         return (self.Datas)
 
     def append(self, objects):
@@ -44,20 +43,43 @@ class SpaceObjects:
                     s = ' '.join(map(str, obj))
                     out_file.write(s + "\n")
 
-    def write_static_to_file(self, output_filename, t):
-        dynamic = self.Datas
-        static = self.read_parameters()
+    def write_static_to_file(self, output_filename, t,dt):
+        parameters = []
+        with open(self.filename) as input_file:
+
+            for line in input_file:
+
+                if len(line.strip()) == 0 or line[0] == '#':
+                    continue  # пустые строки пропускаем
+                object_type = line.split()[0]
+                if self.type == object_type:
+                    data = line.split()
+                    try:
+                        self.parameter = [data[0], float(data[1]), data[2], float(data[3]),
+                                          float(data[4]), float(data[5]), float(data[6]), float(data[7]), int(data[8]),
+                                          int(data[9])]
+                    except IndexError:
+                        self.parameter = [data[0], float(data[1]), data[2], float(data[3]),
+                                          float(data[4]), float(data[5]), float(data[6]), float(data[7]), int(data[8])]
+                    parameters.append(self.parameter)
         with open(output_filename, t) as out_file:
-            for j in range(len(dynamic)):
-                if dynamic[j][0] == self.type:
-                    s = ''
-                    for i in range(len(dynamic[j])):
-                        try:
-                            if float(dynamic[j][i]) - float(static[j][i]) == 0:
-                                s += ' ' + str(static[j][i])
-                        except ValueError:
-                            s += " " + str(static[j][i])
-                    out_file.write(s + "\n")
+            out_file.write("За время : " + str(dt) + "\n")
+            for i in range(len(self.Datas)):
+                s = ""
+                for j in range(len(self.Datas[i])):
+                    try:
+                        if j == 0 or j == 1 or j == 2 or j == 3:
+                            s += " " + str(parameters[i][j])
+                        if j == 4:
+                            s += " Изменение координаты x: " + str(float(self.Datas[i][j]) - float(parameters[i][j]))
+                        if j == 5:
+                            s += " Изменение координаты y: " + str(float(self.Datas[i][j]) - float(parameters[i][j]))
+                        if j == 7:
+                            s += " Изменение угла: " + str(float(self.Datas[i][j]) - float(parameters[i][j])) + \
+                                 " Окружностей: " + str(abs(float((self.Datas[i][j]) - float(parameters[i][j]))) / 360)
+                    except IndexError:
+                        pass
+                out_file.write(s + "\n")
 
 
 class Star(SpaceObjects):
@@ -163,7 +185,7 @@ class University:
         self.max_distance = 0
         self.window_width = self.root.winfo_screenwidth()
         self.window_height = self.root.winfo_screenheight()
-        self.space = tkinter.Canvas(self.root, width=self.window_width, height=self.window_height -119, bg="black")
+        self.space = tkinter.Canvas(self.root, width=self.window_width, height=self.window_height - 119, bg="black")
         self.frame = tkinter.Frame(self.root)
         self.scale_factor = 0
         self.t = self.space.create_text(0, 0, font=self.header_font, anchor='nw', text='', fill="white")
@@ -179,16 +201,18 @@ class University:
                     if objs[0] == "Star" and objp[0] == "Planet" and objs[8] == objp[8]:
                         radius_max = (((objs[4] - objp[4]) ** 2 + (objs[5] - objp[5]) ** 2) ** 0.5 + objs[5]) + \
                                      objp[1]
-                        radius_min =-(((objs[4] - objp[4]) ** 2 + (objs[5] - objp[5]) ** 2) ** 0.5) + objs[5]-objp[1]
+                        radius_min = -(((objs[4] - objp[4]) ** 2 + (objs[5] - objp[5]) ** 2) ** 0.5) + objs[5] - objp[1]
                         if objsp[0] == "Sputnik" and objp[9] == objsp[8]:
-                            radius_max += ((objsp[4] - objp[4]) ** 2 + (objsp[5] - objp[5]) ** 2) ** 0.5 - objp[1] + objsp[1]
-                            radius_min += -(((objsp[4] - objp[4]) ** 2 + (objsp[5] - objp[5]) ** 2) ** 0.5) + objp[1] - objsp[1]
+                            radius_max += ((objsp[4] - objp[4]) ** 2 + (objsp[5] - objp[5]) ** 2) ** 0.5 - objp[1] + \
+                                          objsp[1]
+                            radius_min += -(((objsp[4] - objp[4]) ** 2 + (objsp[5] - objp[5]) ** 2) ** 0.5) + \
+                                          objp[1] - objsp[1]
                         max_list.append(radius_max)
                         min_list.append(radius_min)
         print(max(max_list), min(min_list))
         self.max_distance = max(max_list) - (min(min_list))
         self.indent = -(min(min_list))
-        self.scale_factor = min(self.window_height-119, self.window_width) / (self.max_distance)
+        self.scale_factor = min(self.window_height - 119, self.window_width) / (self.max_distance)
         print(self.window_height, self.window_width, self.scale_factor)
         self.dx = self.dy = self.scale_cord(self.indent)
 
@@ -365,9 +389,8 @@ class University:
             event.x = self.scale_cord(event.x)
             event.y = self.scale_cord(event.y)
             self.scale_factor *= n
-            self.dx -= self.scale_cord(event.x)-self.scale_cord(self.dx)
-            self.dy -= self.scale_cord(event.y)-self.scale_cord(self.dy)
-
+            self.dx -= self.scale_cord(event.x) - self.scale_cord(self.dx)
+            self.dy -= self.scale_cord(event.y) - self.scale_cord(self.dy)
 
         def small(event):
             self.scale_factor /= n
